@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A699AD98-8A3D-469B-886A-7FB72EFC4A4D}</ProjectGuid>
+    <ProjectGuid>{71558ECC-0735-4DC9-A56C-8B30B439AF35}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PruebaTechAndSolve.Business</RootNamespace>
-    <AssemblyName>PruebaTechAndSolve.Business</AssemblyName>
+    <RootNamespace>PruebaTechAndSolve.Dto</RootNamespace>
+    <AssemblyName>PruebaTechAndSolve.Dto</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,11 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Business.Result.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Business.Result.Base.1.0.0\lib\netstandard2.0\Business.Result.Base.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,22 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implentation\OperationsBusiness.cs" />
-    <Compile Include="Interface\IOperationsBusiness.cs" />
+    <Compile Include="UserTripsDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PruebaTechAndSolve.Data\PruebaTechAndSolve.Data.csproj">
-      <Project>{b4699833-567d-44d9-8364-4cf01fd4987d}</Project>
-      <Name>PruebaTechAndSolve.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PruebaTechAndSolve.Dto\PruebaTechAndSolve.Dto.csproj">
-      <Project>{71558ecc-0735-4dc9-a56c-8b30b439af35}</Project>
-      <Name>PruebaTechAndSolve.Dto</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

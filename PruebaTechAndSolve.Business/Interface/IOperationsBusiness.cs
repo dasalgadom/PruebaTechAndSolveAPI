@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Result.Base;
+using PruebaTechAndSolve.Dto;
 
 namespace PruebaTechAndSolve.Business.Interface
 {
@@ -22,7 +23,7 @@ namespace PruebaTechAndSolve.Business.Interface
         /// <param name="document"></param>
         /// <param name="urlProcess"></param>
         /// <returns></returns>
-        Task<BusinessResult<bool>> SaveProcess(int document, string urlProcess);
+        Task<BusinessResult<UserTripsDto>> SaveProcess(int document, string urlProcess);
 
     }
 }

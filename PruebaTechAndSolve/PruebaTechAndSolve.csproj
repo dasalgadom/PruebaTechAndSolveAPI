@@ -48,6 +48,12 @@
     <Reference Include="Business.Result.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Business.Result.Base.1.0.0\lib\netstandard2.0\Business.Result.Base.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
@@ -262,6 +268,10 @@
     <ProjectReference Include="..\PruebaTechAndSolve.Business\PruebaTechAndSolve.Business.csproj">
       <Project>{a699ad98-8a3d-469b-886a-7fb72efc4a4d}</Project>
       <Name>PruebaTechAndSolve.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PruebaTechAndSolve.Dto\PruebaTechAndSolve.Dto.csproj">
+      <Project>{71558ecc-0735-4dc9-a56c-8b30b439af35}</Project>
+      <Name>PruebaTechAndSolve.Dto</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

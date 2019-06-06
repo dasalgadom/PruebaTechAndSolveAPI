@@ -62,7 +62,7 @@ namespace PruebaTechAndSolve.Controllers
 
                 var response = await operationbusiness.SaveProcess(document, pathFullFinal);
 
-                if (response.SuccessfulOperation) return Content(HttpStatusCode.OK, pathFullFinal);
+                if (response.SuccessfulOperation) return Content(HttpStatusCode.OK, result.Result);
                 return Content(HttpStatusCode.InternalServerError, "Error");
             }
             else

@@ -6,11 +6,39 @@ using System.Threading.Tasks;
 using Business.Result.Base;
 using PruebaTechAndSolve.Business.Interface;
 using System.Configuration;
+using PruebaTechAndSolve.Data.Interface;
+using PruebaTechAndSolve.Data.Implementation;
+using PruebaTechAndSolve.Dto;
 
 namespace PruebaTechAndSolve.Business.Implentation
 {
     public class OperationsBusiness : IOperationsBusiness
     {
+
+        // <summary>
+        /// Instancia de la clase BuyerData
+        /// </summary>
+        IUserTripsData _iusertripsdata;
+
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>    
+        public OperationsBusiness()
+        {
+            _iusertripsdata = new UserTripsData();
+        }
+
+
+
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>    
+        public OperationsBusiness(IUserTripsData iusertripsdata)
+        {
+            _iusertripsdata = iusertripsdata;
+
+        }
+
         public BusinessResult<List<string>> CalculateProcess(string[] elements)
         {
             try
@@ -26,16 +54,23 @@ namespace PruebaTechAndSolve.Business.Implentation
             }
         }
 
-        public async Task<BusinessResult<bool>> SaveProcess(int document, string urlProcess)
+        public async Task<BusinessResult<UserTripsDto>> SaveProcess(int document, string urlProcess)
         {
             try
             {
-                throw new NotImplementedException();
+                var userTripsDto = new UserTripsDto()
+                {
+                    Document = document,
+                    DateProcess = System.DateTime.Now,
+                    UrlFileProcess = urlProcess
+                };
+                var result = await _iusertripsdata.CreateAsync(userTripsDto);
+
+                return BusinessResult<UserTripsDto>.Success(result, "Operación Correcta");
             }
             catch (Exception ex)
             {
-
-                throw;
+                return BusinessResult<UserTripsDto>.Issue(null, "Operación Incorrecta", ex);
             }
         }
 
